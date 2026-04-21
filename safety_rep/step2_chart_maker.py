@@ -13,6 +13,15 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import numpy as np
 from datetime import datetime
+import platform
+
+# 운영체제별 한글 폰트 설정
+if platform.system() == 'Windows':
+    plt.rc('font', family='Malgun Gothic')
+elif platform.system() == 'Darwin': # Mac
+    plt.rc('font', family='AppleGothic')
+else:
+    print('지원하지 않는 운영체제입니다.')
 
 # ── 스타일 상수 ──────────────────────────────────────────────
 NAVY_COLORS = [
